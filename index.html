@@ -19,8 +19,17 @@
         <link rel="shortcut icon" href="/solarsystem/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/solarsystem/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="src/assets/css/main.css">
+
+        
 	</head>
 	<body>
+        <script type="importmap">
+            {
+              "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+              }
+            }
+          </script>
         <div class="container-main">
             <!-- <div id="social-buttons-corner" class="social-buttons social-buttons-corner">
                 <a href="https://twitter.com/SanderBlue" class="twitter-follow-button" data-show-count="false">Follow @SanderBlue</a>
@@ -29,11 +38,19 @@
             <div id="chatbot" class="chatbot">
                 <img id="chatbot-icon" src="./src/assets/img/chatboticon.png" />
             </div>
-            <div id="chat-area" class="hidden">
+            <div id="chat-area" class="show">
                 <div id="header">
                     <img height="100" width="100" src="https://cdn.dribbble.com/users/2011679/screenshots/5816471/media/5f38c4784ce8e0bc7469bf0070eca054.gif" />
                     <img id="back-icon" height="20" width="20" src="./src/assets/img/arrow.png" />
                 </div>
+                <ul id="messages">
+                    <li class="outgoing message">
+                        <p>Hello, motherfucker</p>
+                    </li>
+                    <li class="incoming message">
+                        <p>Bol, madarchod</p>
+                    </li>
+                </ul>
                 <div id="input-area">
                     <textarea id="text-input" placeholder="Type a message ..."></textarea>
                     <img src="./src/assets/img/send.png" />
@@ -137,6 +154,7 @@
             </button>
             <a id="tutorial-got-it" class="button large" data-close="tutorial">Got It</a>
         </div>
+        <script type="module" src="./index.js" defer></script>
 
         <script type="text/javascript">
             function isMobile() {

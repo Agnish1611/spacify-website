@@ -4876,3 +4876,33 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.2s ease-in;
   scale: 1.3;
 }
+
+#messages {
+  height: 75%;
+  overflow-y: auto;
+  padding: 10px 25px 10px 10px;
+  list-style: none;
+}
+
+#messages .message {
+  display: flex;
+}
+
+#messages .message p {
+  color: #ffffff;
+  background-color: #2727274e;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  font-size: 0.95rem;
+  border-radius: 8px 8px 8px 0;
+  padding: 5px 10px;
+  max-width: 75%;
+}
+
+#messages .outgoing p{
+  border-radius: 8px 8px 0 8px;
+}
+
+#messages .outgoing {
+  justify-content: flex-end;
+}
