@@ -14,6 +14,7 @@ async function run(incomingMsg) {
     const msgElement = incomingMsg.querySelector('p');
 
     const result = await model.generateContent(userMsg);
+    textInput.value = "";
     const response = await result.response;
     const text = response.text();
     console.log(text);
