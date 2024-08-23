@@ -31,12 +31,11 @@
             }
           </script>
         <div class="container-main">
-            <!-- <div id="social-buttons-corner" class="social-buttons social-buttons-corner">
-                <a href="https://twitter.com/SanderBlue" class="twitter-follow-button" data-show-count="false">Follow @SanderBlue</a>
-                <iframe src="https://ghbtns.com/github-btn.html?user=sanderblue&repo=solar-system-threejs&type=star&count=false" class="github-button" frameborder="0" scrolling="0"></iframe>
-            </div> -->
+            <div id="ar-model" class="button large render-scene">
+                <span>AR Mode</span>
+            </div>
             <div id="chatbot" class="chatbot">
-                <img id="chatbot-icon" src="./src/assets/img/chatboticon.png" />
+                <img id="chatbot-icon" src="./src/assets/img/robot.png" />
             </div>
             <div id="chat-area" class="hidden">
                 <div id="header">
@@ -83,7 +82,7 @@
                             <iframe src="https://ghbtns.com/github-btn.html?user=sanderblue&repo=solar-system-threejs&type=star&count=false" class="github-button" frameborder="0" scrolling="0"></iframe>
                         </div> -->
                         <div id="render-scene" class="button large render-scene">
-                            <span>View Solar System</span>
+                            <span>View 3D Solar System</span>
                         </div>
                     </div>
                     <div id="loading-prompt" class="loading-prompt">
@@ -183,6 +182,59 @@
                 dialog.classList.remove('show');
                 dialog.classList.add('hidden');
             });
+
+            document.getElementById("ar-model").addEventListener("click", function() {
+            // Create the pop-up container
+            let popup = document.createElement("div");
+            popup.style.position = "fixed";
+            popup.style.left = "50%";
+            popup.style.top = "50%";
+            popup.style.transform = "translate(-50%, -50%)";
+            popup.style.backgroundColor = "white";
+            popup.style.padding = "20px";
+            popup.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
+            popup.style.zIndex = "1000";
+            popup.style.borderRadius = "10px";
+            popup.style.display = "flex";
+            popup.style.flexDirection = "column";
+            popup.style.alignItems = "center";
+
+            let text = document.createElement("div");
+            text.innerText = "Scan this QR code to view in AR";
+            text.style.color = "#000000";
+            text.style.fontWeight = "600"
+
+            // Create the image element
+            let img = document.createElement("img");
+            img.src = "src/assets/img/qr.png"; // Replace with your image path
+            img.style.width = "100px";
+            img.style.height = "100px";
+            img.style.borderRadius = "10px";
+
+            // Create a close button
+            let closeButton = document.createElement("button");
+            closeButton.innerText = "Close";
+            closeButton.style.marginTop = "10px";
+            closeButton.style.padding = "10px 20px";
+            closeButton.style.backgroundColor = "#333";
+            closeButton.style.color = "white";
+            closeButton.style.border = "none";
+            closeButton.style.cursor = "pointer";
+            closeButton.style.borderRadius = "5px";
+
+            // Append the image and close button to the pop-up
+            popup.appendChild(text);
+            popup.appendChild(img);
+            popup.appendChild(closeButton);
+
+            // Append the pop-up to the body
+            document.body.appendChild(popup);
+
+            // Add an event listener to the close button to remove the pop-up
+            closeButton.addEventListener("click", function() {
+                document.body.removeChild(popup);
+            });
+        });
         </script>
         <script type="text/javascript" src="src/app/vendor/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="src/app/vendor/foundation-sites/dist/foundation.min.js"></script>

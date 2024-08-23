@@ -4583,6 +4583,7 @@ h1, h2, h3, h4, h5, h6 {
 .container-main {
   position: relative;
   height: 100vh;
+  overflow: hidden;
   width: 100vw; }
 
 .intro-screen {
@@ -4595,6 +4596,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
   z-index: 3;
   background: black;
+  overflow: hidden;
   padding-top: 20px; }
 
 .intro-heading {
@@ -4781,12 +4783,12 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   bottom: 0;
   z-index: 99999;
+  margin: 20px;
 }
 
 #chatbot img {
-  height: 100px;
-  width: 100px;
-  margin: 30px;
+  height: 70px;
+  width: 70px;
   cursor: pointer;
 }
 
@@ -4905,4 +4907,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #messages .outgoing {
   justify-content: flex-end;
+}
+
+#ar-model {
+  margin-top: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  width: fit-content;
+  margin: 10px;
 }
